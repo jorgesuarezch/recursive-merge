@@ -1,8 +1,9 @@
 {
-  "name": "recirsive-merge",
+  "name": "@jorgesuarezch/recursive-merge",
   "version": "0.0.0",
   "description": "helper to merge two objects recursively",
   "main": "lib/index.js",
+  "types": "lib/main.d.ts",
   "scripts": {
     "build": "tsc",
     "format": "prettier --parser typescript --write --list-different 'src/**/*.ts'",
