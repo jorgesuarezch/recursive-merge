@@ -25,7 +25,7 @@ const mergeObject = (a: Param, b: Param): Response => {
       return { ...acc, [field]: mergeArray(aValue, bValue) }
     }
 
-    if (bValue !== undefined && !isObject(bValue)) {
+    if (bValue !== undefined && !isObject(bValue)) { // TODO: Merge only when bValue is a non-complex type. Currently, bValue can be anything but an object, and it will be stored in acc[field]
       acc[field] = bValue
     }
 
