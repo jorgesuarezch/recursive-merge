@@ -5,7 +5,7 @@ __recursiveMerge__ merges two objects recursively based on the next rules:
 1. If `a[field]` is an array and `b[field]` exists but is undefined or null, set `a[field]` to an empty array
 1. If `a[field]` is an array and `b[field]` is an array, set `a[field]` to `b[field]`
 1. If `a[field]` exists and `b[field]` exists but is undefined, delete `a[field]`
-1. If `b[field]` is a non-complex type (number, string, boolean, et cetera), copy to `a[field]`
+1. If `b[field]` is a non-complex type (number, string, boolean, etcetera), copy to `a[field]`
 
 
 ## Install

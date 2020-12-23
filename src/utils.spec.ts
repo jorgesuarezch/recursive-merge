@@ -1,4 +1,4 @@
-import { isArray, isObject, mergeArray } from './utils'
+import { isArray, isObject, isPrimitiveType, mergeArray } from './utils'
 
 describe('isArray', () => {
   it('should return true', () => {
@@ -30,6 +30,27 @@ describe('isObject', () => {
     expect(isObject(false)).toBeFalsy()
     expect(isObject(1)).toBeFalsy()
     expect(isObject('a')).toBeFalsy()
+  })
+})
+
+describe('isPrimitiveType', () => {
+  it('should return true', () => {
+    expect(isPrimitiveType(undefined)).toBeTruthy()
+    expect(isPrimitiveType(null)).toBeTruthy()
+    expect(isPrimitiveType(true)).toBeTruthy()
+    expect(isPrimitiveType(false)).toBeTruthy()
+    expect(isPrimitiveType(1)).toBeTruthy()
+    expect(isPrimitiveType('a')).toBeTruthy()
+  })
+  it('should return false', () => {
+    expect(isPrimitiveType({})).toBeFalsy()
+    expect(isPrimitiveType([])).toBeFalsy()
+    expect(isPrimitiveType(new Date())).toBeFalsy()
+    expect(isPrimitiveType(new Number(100))).toBeFalsy()
+    expect(isPrimitiveType(new String('hello world'))).toBeFalsy()
+    expect(isPrimitiveType(function () {})).toBeFalsy()
+    expect(isPrimitiveType(() => {})).toBeFalsy()
+    expect(isPrimitiveType(Symbol())).toBeFalsy()
   })
 })
 

@@ -12,6 +12,14 @@ export const isObject = (value: unknown): boolean =>
   value !== null && !isArray(value) && typeof value === 'object'
 
 /**
+ * Check if the given value is a primitive type
+ * @param value
+ */
+export const isPrimitiveType = (value: unknown) =>
+  value === null ||
+  ['undefined', 'string', 'boolean', 'number', 'bigint'].includes(typeof value)
+
+/**
  * Returns an array based on b parameter value
  * @param {unknown} a
  * @param {unknown} b

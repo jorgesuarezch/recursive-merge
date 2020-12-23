@@ -1,4 +1,4 @@
-import { isArray, isObject, mergeArray } from './utils'
+import { isArray, isObject, isPrimitiveType, mergeArray } from './utils'
 
 type Param = Record<string, any>
 
@@ -25,7 +25,7 @@ const mergeObject = (a: Param, b: Param): Response => {
       return { ...acc, [field]: mergeArray(aValue, bValue) }
     }
 
-    if (bValue !== undefined && !isObject(bValue)) {
+    if (bValue !== undefined && isPrimitiveType(bValue)) {
       acc[field] = bValue
     }
 
